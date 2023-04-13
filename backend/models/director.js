@@ -6,7 +6,7 @@ const directorSchema = new Mongoose.Schema({
         required: true
     },
     oscars: {
-        type: Number,
+        type: Number
     }
 });
 
