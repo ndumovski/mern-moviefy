@@ -87,5 +87,4 @@ async function getMovie(req, res, next) {
     next();
 }
 
-
 module.exports = router;

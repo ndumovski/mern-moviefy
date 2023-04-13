@@ -1,26 +1,28 @@
-import React, { useState, useEffect } from 'react';
-import axios from 'axios';
+import React from 'react';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import NavBar from './components/Navbar/NavBar';
+import Home from './pages/HomePage/Home';
+import Directors from './pages/Directors/Directors';
+import AddDirector from './pages/AddDirector/AddDirector';
+import Movies from './pages/Movies/Movies';
+import AddMovie from './pages/AddMovie/AddMovie';
 
 function App() {
-  const [movies, setMovies] = useState([]);
-
-  useEffect(() => {
-    axios.get('http://localhost:5000/movies')
-      .then(res => setMovies(res.data))
-      .catch(err => console.log(err));
-  }, []);
-
   return (
-    <div>
-      <h1>Moviefy</h1>
-      <ul>
-        {movies.map(movie => (
-          <li key={movie._id}>
-            {movie.title} ({movie.releaseYear}) - ({movie.rating}) - directed by {movie.director.name}
-          </li>
-        ))}
-      </ul>
-    </div>
+    <Router>
+      <div>
+        <NavBar />
+        <div className="container">
+          <Routes>
+            <Route exact path="/" component={Home} />
+            <Route exact path="/directors" component={Directors} />
+            <Route exact path="/add-director" component={AddDirector} />
+            <Route exact path="/movies" component={Movies} />
+            <Route exact path="/add-movie" component={AddMovie} />
+          </Routes>
+        </div>
+      </div>
+    </Router>
   );
 }
 
