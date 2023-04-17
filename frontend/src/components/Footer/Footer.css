@@ -1,0 +1,16 @@
+.footer-background-color{
+    background: linear-gradient(to left, #4b3e7a, #1313b4, #1313b4, #040c39);
+}
+.footer-color{
+    color: #bdf4ff;
+    font-family: "Montserrat Alternates", sans-serif;
+}
+.footer-color:hover{
+    color: red;
+    cursor: pointer;
+    text-decoration: none;
+}
+.content-bg{
+    color: #bdf4ff;
+}
+

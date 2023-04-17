@@ -1,0 +1,61 @@
+.header-title{
+    color: #bdf4ff;
+    text-decoration: none;
+    font-size: 3rem;
+    font-weight: bold;
+    font-family: 'Montserrat Alternates', sans-serif;
+}
+.header-nav{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 5rem;
+}
+.header-title a{
+    text-decoration: none;
+    color: #bdf4ff;
+    font-weight: bold;
+    padding: 1rem;
+    font-family: 'Montserrat Alternates', sans-serif;
+}
+
+.header-nav a:hover, .header-title:hover{
+    cursor: pointer;
+    text-decoration: none;
+    color: red;
+    transform: scale(1.1);
+}
+
+.topnav{
+    overflow: hidden;
+}
+
+.topnav a{
+    float: right;
+    display: block;
+    color: #bdf4ff;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    font-family: "Montserrat Alternates", sans-serif;
+}
+
+.topnav a:hover{
+    cursor:pointer;
+    text-decoration: none;
+    color: red;
+}
+
+/*Responsive */
+@media screen and (max-width: 600px){
+    .header-nav a{
+        float: none;
+        width: 100%;
+    }
+
+    .header-title{
+        text-align: center;
+    }
+}
+    

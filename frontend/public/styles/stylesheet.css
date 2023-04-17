@@ -1,0 +1,23 @@
+:root{
+    font-family: 'Montserrat Alternates', sans-serif;
+    font-size: 20px;
+    color: #bdf4ff;
+}
+
+*,*::before,*::after{
+    box-sizing: border-box;
+}   
+
+body{
+    background: linear-gradient(to right, #4b3e7a, #1313b4, #1313b4, #040c39);
+}
+
+.my-container{
+    max-width: 1200px;
+    margin: auto;
+    margin-bottom: 3rem;
+}
+
+.inside-container{
+   margin: 0 2rem;
+}
