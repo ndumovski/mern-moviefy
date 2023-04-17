@@ -15,11 +15,11 @@ function App() {
         <NavBar />
         <div className="inside-container">
           <Routes>
-            <Route exact path="/" component={Home} />
-            <Route exact path="/directors" component={Directors} />
-            <Route exact path="/add-director" component={AddDirector} />
-            <Route exact path="/movies" component={Movies} />
-            <Route exact path="/add-movie" component={AddMovie} />
+            <Route exact path="/" element={<Home/>} />
+            <Route exact path="/directors" element={<Directors/>} />
+            <Route exact path="/add-director" element={<AddDirector/>} />
+            <Route exact path="/movies" element={<Movies/>} />
+            <Route exact path="/add-movie" element={<AddMovie/>} />
           </Routes>
         </div>
       </div>

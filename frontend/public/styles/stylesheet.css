@@ -21,3 +21,11 @@ body{
 .inside-container{
    margin: 0 2rem;
 }
+
+.universal-heading{
+    font-size: 1.9rem;
+    font-weight: 500;
+    color: #bdf4ff;
+    font-family: 'Montserrat Alternates', sans-serif;
+    text-align: center;
+}

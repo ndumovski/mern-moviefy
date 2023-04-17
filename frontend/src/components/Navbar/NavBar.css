@@ -53,6 +53,9 @@
         float: none;
         width: 100%;
     }
+    .header-nav{
+        display: flow-root;
+    }
 
     .header-title{
         text-align: center;

@@ -1,16 +1,37 @@
 .footer-background-color{
     background: linear-gradient(to left, #4b3e7a, #1313b4, #1313b4, #040c39);
 }
+
 .footer-color{
     color: #bdf4ff;
     font-family: "Montserrat Alternates", sans-serif;
 }
-.footer-color:hover{
+.footer-color:hover, .coming-soon a:hover, .quick-links a:hover{
     color: red;
     cursor: pointer;
     text-decoration: none;
 }
 .content-bg{
     color: #bdf4ff;
+    text-align: left;
+    font-family: "Montserrat Alternates", sans-serif;
 }
 
+.coming-soon a, .quick-links a{
+    text-decoration: none;
+    color: #bdf4ff;
+    font-family: "Montserrat Alternates", sans-serif;
+}
+
+
+.social-icons a i{
+    text-decoration: none;
+    color: #bdf4ff;
+    margin: 0 10px;
+}
+
+.social-icons a i:hover{
+    color: red;
+    cursor: pointer;
+    transform: scale(1.4);
+}
