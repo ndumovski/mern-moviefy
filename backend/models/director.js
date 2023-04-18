@@ -7,6 +7,9 @@ const directorSchema = new Mongoose.Schema({
     },
     oscars: {
         type: Number
+    },
+    slug: {
+        type: String
     }
 });
 
