@@ -13,10 +13,10 @@ exports.getDirectors = async (req, res) => {
 
 //Create a director
 exports.createDirector = async (req, res) => {
-    const { name, oscars } = req.body;
+    const { name, oscars, bio } = req.body;
     const slug = name.toLowerCase().replace(/\s+/g, '-');
     try{
-        const director = new Director({ name, oscars, slug });
+        const director = new Director({ name, oscars, bio, slug });
         const newDirector = await director.save();
         res.status(201).json(newDirector);
     } catch (err) {

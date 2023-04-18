@@ -37,3 +37,59 @@ body{
     font-family: 'Montserrat Alternates', sans-serif;
     text-align: center;
 }
+.form-header-color{
+    margin-top: 25px;
+    font-size: 0.6rem;
+    font-weight: 400;
+    color: #bdf4ff;
+    font-family: 'Montserrat Alternates', sans-serif;
+}
+
+/* Forms */
+
+.my-form-item{
+    display: flex;
+    flex-direction: column;
+    margin-left: 1.5rem;
+    flex-grow: 1;
+    flex-basis: 0;
+}
+
+.my-form-item>label{
+    font-size: 1.2rem;
+    margin-bottom: .25rem;
+    margin-left: .5rem;
+}
+.my-form-item input, .my-form-item textarea{
+    height: 2rem;
+    padding: .25rem .25rem;
+    margin-top: 0.5rem;
+    border-radius: .25rem;
+    border: 1px solid #4d26d9;
+    background-color: #13136c;
+    color: #bdf4ff;
+    font-size: 1rem;
+    font-weight: 200;
+    font-family: 'Montserrat Alternates', sans-serif;
+    outline: none;
+}
+.my-form-item textarea{
+    height: 15rem;
+    width: auto;
+    resize: none;
+}
+
+.my-forn-item input:focus, .my-form-item textarea:focus{
+    border-color: 1px solid #9999ff;
+}
+
+/*Buttons*/
+.my-btn-row{
+    display: flex;
+    align-items: flex-start;
+    justify-content: flex-start;
+}
+
+.my-btn-row>*{
+    margin-left: 1rem;
+}
