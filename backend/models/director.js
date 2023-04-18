@@ -8,6 +8,10 @@ const directorSchema = new Mongoose.Schema({
     oscars: {
         type: Number
     },
+    bio:{
+        type: String,
+        required: true
+    },
     slug: {
         type: String
     }

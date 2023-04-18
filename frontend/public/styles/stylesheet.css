@@ -29,3 +29,11 @@ body{
     font-family: 'Montserrat Alternates', sans-serif;
     text-align: center;
 }
+.universal-paragraph{
+    margin-top: 30px;
+    font-size: 0.9rem;
+    font-weight: 400;
+    color: #bdf4ff;
+    font-family: 'Montserrat Alternates', sans-serif;
+    text-align: center;
+}

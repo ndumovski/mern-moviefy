@@ -1,0 +1,17 @@
+.card{
+    background: linear-gradient(to right, #5e2a3a, #1313b4, #040c39);
+}
+.card-body{
+    color: #bdf4ff;
+}
+
+.card-title a{
+    text-decoration: none;
+    color: #bdf4ff;
+}
+
+.card-title a:hover{
+    color: red;
+    cursor: pointer;
+} 
+

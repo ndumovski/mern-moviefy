@@ -47,9 +47,12 @@ exports.updateDirector = async (req, res) => {
         if (director == null) {
             return res.status(404).json({ message: 'Director not found' });
         }
-        const {name, oscars} = req.body;
+        const {name, oscars, bio} = req.body;
         if (name != null) {
             director.name = name;
+        }
+        if (bio != null) {
+            director.bio = bio;
         }
         if (oscars != null) {
             director.oscars = oscars;
