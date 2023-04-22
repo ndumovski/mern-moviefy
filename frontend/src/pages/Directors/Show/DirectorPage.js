@@ -1,9 +1,10 @@
 import React, { useState, useEffect } from "react";
-import { useParams } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 
     const DirectorPage = () => {
         const {slug } = useParams();
         const [director, setDirector] = useState(null);
+        const navigate = useNavigate();
 
         useEffect(() => {
             const fetchDirector = async () => {
@@ -18,11 +19,19 @@ import { useParams } from "react-router-dom";
             fetchDirector();
         }, [slug]);
 
+        const handleUpdate = () => {
+            navigate(`/directors/${director.slug}/edit`);
+        };
+
         return (
             <div>
                 {director ? (
                     <div>
                         <h1 className="universal-heading">{director.name}</h1>
+                        <div className="text-center m-3">
+                            <button className="btn btn-info m-2" onClick={handleUpdate} >Edit</button>
+                            <button className="btn btn-danger m-2">Delete</button>
+                        </div>
                         <p className="universal-paragraph">{director.bio}</p>
                     </div>
                 ) : (

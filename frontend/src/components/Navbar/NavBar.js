@@ -10,7 +10,7 @@ function NavBar() {
         <div className="topnav">
           <Link to="/add-movie">Add Movie</Link>
           <Link to="/movies">Movies</Link>
-          <Link to="/add-director">Add Director</Link>
+          <Link to="/directors/add">Add Director</Link>
           <Link to="/directors">Directors</Link>
         </div>
       </nav>

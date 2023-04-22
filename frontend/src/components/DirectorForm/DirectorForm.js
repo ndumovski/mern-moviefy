@@ -1,23 +1,34 @@
 import React, { useState } from "react";
+import { useNavigate } from "react-router-dom";
+import axios from "axios";
 
-const DirectorForm = ({ onSubmit, onCancel }) => {
-    const [name, setName] = useState("");
-    const [oscars, setOscars] = useState(0);
-    const [bio, setBio] = useState("");
+const DirectorForm = ({ director, onSubmit, onCancel }) => {
+    const [name, setName] = useState(director ? director.name : "");
+    const [oscars, setOscars] = useState(director ? director.oscars : 0);
+    const [bio, setBio] = useState(director ? director.bio : "");
+    const navigate = useNavigate();
 
     const handleFormSubmit = (e) => {
         e.preventDefault();
-        onSubmit({ name, oscars, bio });
-    };
+        const data = { name, oscars, bio };
+        try{
+            if(director){
+                axios.put(`http://localhost:5000/directors/${director.slug}/edit`, data);
+                onSubmit(data);
+            } else {
+                axios.post("http://localhost:5000/directors/add", data);
+                onSubmit(data);
+            }
+            navigate(`/directors`);
+        } catch (error) {
+            console.log(error);
+        }
 
+        }
     const handleCancel = (e) => {
-        e.preventDefault();
-        setName("");
-        setOscars(0);
-        setBio("");
+        navigate(`/directors/${director.slug}`);
     };
 
-       
 
     return (
         <form onSubmit={handleFormSubmit}>
@@ -39,8 +50,8 @@ const DirectorForm = ({ onSubmit, onCancel }) => {
 
             <div className="container">
              <div className="my-btn-row mt-4">
-                <button type="submit" className="btn btn-outline-primary">Add</button>
-                <button type="button" className="btn btn-outline-danger" onClick={handleCancel}>Cancel</button>
+                <button type="submit" className="btn btn-outline-primary">{director ? "Update" : "Add"}</button>
+               {onCancel && <button type="button" className="btn btn-outline-danger" onClick={handleCancel}>Cancel</button> }
              </div>
             </div>
         </form>

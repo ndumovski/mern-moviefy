@@ -45,8 +45,28 @@ body{
     font-family: 'Montserrat Alternates', sans-serif;
 }
 
-/* Forms */
+/* Director */
+.card{
+    background: linear-gradient(to right, #5e2a3a, #1313b4, #040c39);
+}
+.card-body{
+    color: #bdf4ff;
+}
 
+.card-title a{
+    text-decoration: none;
+    color: #bdf4ff;
+}
+
+.card-title a:hover{
+    color: red;
+    cursor: pointer;
+} 
+.card-text{
+    color: #bdf4ff;
+}
+
+/* Forms */
 .my-form-item{
     display: flex;
     flex-direction: column;
@@ -74,12 +94,12 @@ body{
     outline: none;
 }
 .my-form-item textarea{
-    height: 15rem;
+    height: 10rem;
     width: auto;
     resize: none;
 }
 
-.my-forn-item input:focus, .my-form-item textarea:focus{
+.my-form-item input:focus, .my-form-item textarea:focus{
     border-color: 1px solid #9999ff;
 }
 

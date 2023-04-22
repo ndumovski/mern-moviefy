@@ -6,13 +6,13 @@ const directorController = require('../controllers/directorController');
 router.get('/', directorController.getDirectors);
 
 //POST a new director
-router.post('/', directorController.createDirector);
+router.post('/add', directorController.createDirector);
 
 //GET a director by slug
 router.get('/:slug', directorController.getDirectorBySlug);
 
 //Update an existing director by slug
-router.put('/:slug', directorController.updateDirector);
+router.put('/:slug/edit', directorController.updateDirector);
 
 //Delete an existing director by slug
 router.delete('/:slug', directorController.deleteDirector);
