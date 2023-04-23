@@ -22,6 +22,9 @@ const movieSchema = new Mongoose.Schema({
         type: mongoose.Schema.Types.ObjectId,
         required: true,
         ref: 'Director'
+    },
+    slug: {
+        type: String,
     }
 });
 
