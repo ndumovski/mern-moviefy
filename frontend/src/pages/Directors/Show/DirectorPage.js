@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { useNavigate, useParams } from "react-router-dom";
+import axios from "axios";
 
     const DirectorPage = () => {
         const {slug } = useParams();
@@ -9,8 +10,7 @@ import { useNavigate, useParams } from "react-router-dom";
         useEffect(() => {
             const fetchDirector = async () => {
                 try {
-                    const response = await fetch(`http://localhost:5000/directors/${slug}`);
-                    const data = await response.json();
+                    const { data } = await axios.get(`http://localhost:5000/directors/${slug}`);
                     setDirector(data);
                 } catch (error) {
                     console.log(error);
@@ -23,6 +23,16 @@ import { useNavigate, useParams } from "react-router-dom";
             navigate(`/directors/${director.slug}/edit`);
         };
 
+        const handleDelete = async () => {
+          try{
+            await axios.delete(`http://localhost:5000/directors/${director.slug}`);
+            navigate('/directors');
+            } catch (error) {
+                console.log(error);
+          }
+        };
+
+
         return (
             <div>
                 {director ? (
@@ -30,7 +40,7 @@ import { useNavigate, useParams } from "react-router-dom";
                         <h1 className="universal-heading">{director.name}</h1>
                         <div className="text-center m-3">
                             <button className="btn btn-info m-2" onClick={handleUpdate} >Edit</button>
-                            <button className="btn btn-danger m-2">Delete</button>
+                            <button className="btn btn-danger m-2" onClick={handleDelete} >Delete</button>
                         </div>
                         <p className="universal-paragraph">{director.bio}</p>
                     </div>

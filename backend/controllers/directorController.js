@@ -19,6 +19,7 @@ exports.createDirector = async (req, res) => {
         const director = new Director({ name, oscars, bio, slug });
         const newDirector = await director.save();
         res.status(201).json(newDirector);
+        console.log(newDirector);
     } catch (err) {
         return res.status(400).json({ message: err.message });
     }
