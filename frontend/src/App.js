@@ -9,6 +9,8 @@ import DirectorPage from './pages/Directors/Show/DirectorPage';
 import EditDirector from './pages/Directors/Edit/EditDirector';
 import Movies from './pages/Movies/Movies';
 import AddMovie from './pages/Movies/Add/AddMovie';
+import MoviePage from './pages/Movies/Show/MoviePage';
+import EditMovie from './pages/Movies/Edit/EditMovie';
 
 
 function App() {
@@ -24,7 +26,9 @@ function App() {
             <Route exact path="/directors/:slug" element={<DirectorPage/>} />
             <Route exact path="/directors/:slug/edit" element={<EditDirector/>} />
             <Route exact path="/movies" element={<Movies/>} />
-            <Route exact path="/add-movie" element={<AddMovie/>} />
+            <Route exact path="/movies/add" element={<AddMovie/>} />
+            <Route exact path="/movies/:slug" element={<MoviePage/>} />
+            <Route exact path="/movies/:slug/edit" element={<EditMovie/>} />
           </Routes>
         </div>
       </div>

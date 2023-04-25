@@ -31,9 +31,10 @@
     overflow: hidden;
 }
 
+
 .topnav a{
-    float: right;
-    display: block;
+    /* float: right; */
+    /* display: block; */
     color: #bdf4ff;
     text-align: center;
     padding: 14px 16px;
@@ -56,9 +57,12 @@
     .header-nav{
         display: flow-root;
     }
-
     .header-title{
         text-align: center;
     }
+    .topnav a{
+        display: block;
+    }
+    
 }
     
