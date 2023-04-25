@@ -23,8 +23,19 @@ const MoviePage = () => {
     //Get the year from the release date and convert it to a YYYY format
     const releasedYear = movie ? moment(movie.releaseYear).format("YYYY") : null;
 
+    //Update movie
     const handleUpdate = () => {
         navigate(`/movies/${movie.slug}/edit`);
+    };
+
+    //Delete movie
+    const handleDelete = async () => {
+        try{
+            await axios.delete(`http://localhost:5000/movies/${movie.slug}`);
+            navigate('/movies');
+        } catch (error) {
+            console.log(error);
+        }
     };
 
     return (
@@ -34,7 +45,7 @@ const MoviePage = () => {
                     <h1 className="universal-heading">{movie.title}</h1>
                     <div className="text-center m-3">
                             <button className="btn btn-info m-2" onClick={handleUpdate}>Edit</button>
-                            <button className="btn btn-danger m-2">Delete</button>
+                            <button className="btn btn-danger m-2" onClick={handleDelete}>Delete</button>
                         </div>
                     <div className="container">
                         <div className="row">
