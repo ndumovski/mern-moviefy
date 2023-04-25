@@ -25,6 +25,9 @@ const movieSchema = new mongoose.Schema({
     },
     slug: {
         type: String,
+    },
+    photo:{
+        type: String
     }
 });
 

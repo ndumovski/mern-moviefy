@@ -1,5 +1,41 @@
 const Movie = require('../models/movie');
-const Director = require('../models/director');
+const multer = require('multer');
+const path = require('path');
+
+//Set storage engine
+const storage = multer.diskStorage({
+    destination: function(req, file, cb) {
+        cb(null, path.join(__dirname, '../../frontend/public/uploads'));
+    },
+    filename: function(req, file, cb) {
+        cb(null, file.originalname);
+    }
+});
+
+//Check file type
+const fileFilter = (req, file, cb) => {
+    const allowedTypes = ['image/jpeg', 'image/jpg', 'image/png'];
+    if(allowedTypes.includes(file.mimetype)) {
+        cb(null, true);
+    } else {
+        cb(null, false);
+    }
+};
+
+const upload = multer({
+    storage: storage,
+    fileFilter: fileFilter,
+    limits: {
+        fileSize: 1024 * 1024 * 5, // 5 MB
+      },
+    onError: function (err, next) {
+      console.log('Multer error:', err);
+      next(err);
+    }
+  });
+
+//Upload a poster
+exports.uploadPhoto = upload.single('photo');
 
 //Read all movies
 exports.getMovies = async (req, res) => {
@@ -12,20 +48,19 @@ exports.getMovies = async (req, res) => {
 };
 
 //Create a movie
-exports.createMovie = async (req, res) => {
+exports.createMovie =  async (req, res) => {
     const { title, description, releaseYear, rating, director } = req.body;
-    const slug = title.toLowerCase().replace(/\s+/g, '-');
+    const slug = title.toLowerCase().split(' ').join('-');
+    const photo = req.file.filename;
+    console.log(photo);
+    const movie = new Movie({title, description, releaseYear, rating, director, slug, photo});
     try{
-        const movie = new Movie({ title, description, releaseYear, rating, director, slug });
         const newMovie = await movie.save();
-        res.status(201).json(newMovie);
         console.log(newMovie);
-    }
-    catch (err) {
+    } catch (err) {
         return res.status(400).json({ message: err.message });
     }
 };
-
 //Read one movie
 exports.getMovieBySlug = async (req, res) => {
     const slug = req.params.slug;
@@ -64,6 +99,9 @@ exports.updateMovie = async (req, res) => {
         if(director != null) {
             movie.director = director;
         }
+        if(req.file != null) {
+            movie.photo = req.file.filename;
+        }
         const updatedMovie = await movie.save();
         res.json(updatedMovie);
     } catch (err) {
@@ -85,4 +123,6 @@ exports.deleteMovie = async (req, res) => {
         return res.status(500).json({ message: err.message });
     }
 };
+
+
 

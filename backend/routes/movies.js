@@ -6,7 +6,10 @@ const movieController = require('../controllers/movieController');
 router.get('/', movieController.getMovies);
 
 //POST a new movie
-router.post('/add', movieController.createMovie);
+// router.post('/add', movieController.createMovie);
+
+//POST a new movie and upload a photo
+router.post('/add', movieController.uploadPhoto, movieController.createMovie);
 
 //GET a movie by slug
 router.get('/:slug', movieController.getMovieBySlug);
