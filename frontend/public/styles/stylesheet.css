@@ -66,7 +66,7 @@ body{
     color: #bdf4ff;
 }
 
-/* Forms */
+/* Forms styles */
 .my-form-item{
     display: flex;
     flex-direction: column;
@@ -80,7 +80,7 @@ body{
     margin-bottom: .25rem;
     margin-left: .5rem;
 }
-.my-form-item input, .my-form-item textarea{
+.my-form-item input, .my-form-item textarea, .my-form-item select{
     height: 2rem;
     padding: .25rem .25rem;
     margin-top: 0.5rem;
@@ -98,8 +98,11 @@ body{
     width: auto;
     resize: none;
 }
+.my-form-item select option{
+    background-color: black;
+}
 
-.my-form-item input:focus, .my-form-item textarea:focus{
+.my-form-item input:focus, .my-form-item textarea:focus, .my-form-item select:focus{
     border-color: 1px solid #9999ff;
 }
 

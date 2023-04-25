@@ -4,7 +4,7 @@ const Director = require('../models/director');
 //Read all movies
 exports.getMovies = async (req, res) => {
     try{
-        const movies = await Movie.find();
+        const movies = await Movie.find().populate('director').exec();
         res.json(movies);
     } catch (err) {
         return res.status(500).json({ message: err.message });
@@ -30,7 +30,7 @@ exports.createMovie = async (req, res) => {
 exports.getMovieBySlug = async (req, res) => {
     const slug = req.params.slug;
     try{
-        const movie = await Movie.findOne({ slug: slug });
+        const movie = await Movie.findOne({ slug: slug }).populate('director').exec();
         if(movie == null) {
             return res.status(404).json({ message: 'Movie not found' });
         }

@@ -1,6 +1,6 @@
-const Mongoose = require('mongoose');
+const mongoose = require('mongoose');
 
-const directorSchema = new Mongoose.Schema({
+const directorSchema = new mongoose.Schema({
     name: {
         type: String,
         required: true
@@ -17,4 +17,4 @@ const directorSchema = new Mongoose.Schema({
     }
 });
 
-module.exports = Mongoose.model('Director', directorSchema);
+module.exports = mongoose.model('Director', directorSchema);
