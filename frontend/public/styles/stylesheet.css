@@ -29,6 +29,14 @@ body{
     font-family: 'Montserrat Alternates', sans-serif;
     text-align: center;
 }
+
+.movie-details h3{
+    font-size: 1.2rem;
+    font-weight: 500;
+    color: #bdf4ff;
+    font-family: 'Montserrat Alternates', sans-serif;
+}
+
 .universal-paragraph{
     margin-top: 30px;
     font-size: 0.9rem;
