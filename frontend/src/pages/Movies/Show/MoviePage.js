@@ -23,6 +23,10 @@ const MoviePage = () => {
     //Get the year from the release date and convert it to a YYYY format
     const releasedYear = movie ? moment(movie.releaseYear).format("YYYY") : null;
 
+    //Get the image url
+    const imageUrl = movie ? `/uploads/${movie.photo}` : null;
+    // console.log(imageUrl);
+
     //Update movie
     const handleUpdate = () => {
         navigate(`/movies/${movie.slug}/edit`);
@@ -42,25 +46,23 @@ const MoviePage = () => {
         <div>
             {movie ? (
                 <div>
-                    <h1 className="universal-heading">{movie.title}</h1>
-                    <div className="text-center m-3">
-                            <button className="btn btn-info m-2" onClick={handleUpdate}>Edit</button>
-                            <button className="btn btn-danger m-2" onClick={handleDelete}>Delete</button>
-                        </div>
                     <div className="container">
                         <div className="row">
-                            <div className="col-md-6 col-xs-6">
-                                <img src="" alt={movie.title} />
+                            <div className="col-md-6">
+                                <img className="movie-cover movie-cover-show fixed-look" src={imageUrl} alt={movie.title} />
                             </div>
-                            <div className="col-md-6 col-xs-6 movie-details ">
-                                <h3 className="">Released: {releasedYear}</h3>
-                                <h3>Director: {movie.director.name}</h3>
-                                <h3>Rating: {movie.rating}</h3>
-                            </div>
-                            <div className="col-md-12">
-                                <p className="universal-paragraph">
-                                    {movie.description}
-                                </p>
+                            <div className="col-md-6">
+                                <h1 className="universal-heading text-start">{movie.title}</h1>
+                                    <button className="btn btn-info m-2" onClick={handleUpdate}>Edit</button>
+                                    <button className="btn btn-danger m-2" onClick={handleDelete}>Delete</button>
+                                    <hr className="show-details" />
+                                    <div className="col-md-12 movie-details">
+                                        <p className="show-details">Released in {releasedYear} by {movie.director.name} </p>
+                                        <p className="show-details">{movie.description}</p>
+                                    </div>
+                                    <div className="col-md-12 movie-details">
+                                        <p className="show-details">Rating by IMDb is {movie.rating} </p>
+                                    </div>
                             </div>
                         </div>
                     </div>

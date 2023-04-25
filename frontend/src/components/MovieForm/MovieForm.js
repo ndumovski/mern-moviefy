@@ -1,6 +1,7 @@
 //This code is for the movie form, same like the director form
 import React, { useState, useEffect } from "react";
 import axios from "axios";
+import { useNavigate } from "react-router-dom";
 
 const MovieForm = ({ movie, onSubmit, onCancel }) => {
     const [title, setTitle] = useState("");
@@ -8,6 +9,9 @@ const MovieForm = ({ movie, onSubmit, onCancel }) => {
     const [releaseYear, setReleaseYear] = useState("");
     const [rating, setRating] = useState("");
     const [director, setDirector] = useState("");
+    const [photo, setPhoto] = useState("");
+
+    const navigate = useNavigate();
 
     useEffect(() => {
         if (movie) {
@@ -16,6 +20,7 @@ const MovieForm = ({ movie, onSubmit, onCancel }) => {
             setReleaseYear(movie.releaseYear);
             setRating(movie.rating);
             setDirector(movie.director);
+            setPhoto(movie.photo);
         }
 
     }, [movie]);
@@ -37,9 +42,37 @@ const MovieForm = ({ movie, onSubmit, onCancel }) => {
         setReleaseYear(year);
     }
 
+    const handlePhoto = (event) => {
+        const photo = event.target.files[0];
+        setPhoto(photo);
+    }
+
     const handleSubmit = (event) => {
         event.preventDefault();
-        onSubmit({ title, description, releaseYear, rating, director });
+    
+        // create a new FormData object and append the form data to it
+        const formData = new FormData();
+        formData.append('title', title);
+        formData.append('description', description);
+        formData.append('releaseYear', releaseYear);
+        formData.append('rating', rating);
+        formData.append('director', director);
+        formData.append('photo', photo);
+    
+        // send the form data to the server
+        axios.post('http://localhost:5000/movies/add', formData, {
+            headers: {
+                'Content-Type': 'multipart/form-data'
+            }
+        })
+        .then(response => {
+            console.log(response.data);
+            onCancel();
+            navigate(`/movies`);
+        })
+        .catch(error => {
+            console.log(error);
+        })
     }
 
     return (
@@ -55,6 +88,11 @@ const MovieForm = ({ movie, onSubmit, onCancel }) => {
                     <textarea required id="description" value={description} onChange={(e) => setDescription(e.target.value)} />
                 </div>
 
+                <div className="col-md-12 my-form-item">
+                    <label className="form-header-color" htmlFor="poster">Photo</label>
+                    <input type="file" accept=".png, .jpg, .jpeg" name="photo" onChange={handlePhoto} />
+                </div>
+    
                 <div className="col-md-12 my-form-item">
                     <label className="form-header-color" htmlFor="release-year">Release Year</label>
                     <input required type="date" id="releaseYear" name="release-year" onChange={handleYearChange} />

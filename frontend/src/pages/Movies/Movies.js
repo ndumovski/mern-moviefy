@@ -13,27 +13,24 @@ function Movies() {
         });
     }, []);
 
-
-
-
     return (
         <div className="container">
-            <div className="movie-row row">
                 <h2 className="universal-heading">Movies</h2>
+                <div className="row">
                 {movies.map((movie) => (
-                    <div className="col-md-4" key={movie._id}>
-                        <div className="card mt-4">
-                            <div className="card-body">
-                                <h5 className="card-title">
-                                    <Link to={`/movies/${movie.slug}`}>{movie.title}</Link>
-                                </h5>
-                                <p className="card-text">{movie.director.name}</p>
+                        <div className="col-sm-4 mb-3" key={movie._id}>
+                            <div className="movie-container">
+                                <img className="movie-poster" src={`/uploads/${movie.photo}`} alt={movie.title} />
+                                <div className="movie-overlay">
+                                    <i className="fa fa-star rating-star"></i>
+                                    <div className="movie-rating">{movie.rating} / 10 </div>
+                                    <Link to={`/movies/${movie.slug}`} className="movie-details-btn">View Details </Link>
+                                </div>   
                             </div>
                         </div>
-                    </div>
-                ))}
+                     ))}
+                </div>
             </div>
-        </div>
     );
     }
 export default Movies;

@@ -3,25 +3,20 @@
     font-size: 20px;
     color: #bdf4ff;
 }
-
 *,*::before,*::after{
     box-sizing: border-box;
 }   
-
 body{
     background: linear-gradient(to right, #4b3e7a, #1313b4, #1313b4, #040c39);
 }
-
 .my-container{
     max-width: 1200px;
     margin: auto;
     margin-bottom: 3rem;
 }
-
 .inside-container{
    margin: 0 2rem;
 }
-
 .universal-heading{
     font-size: 1.9rem;
     font-weight: 500;
@@ -29,14 +24,12 @@ body{
     font-family: 'Montserrat Alternates', sans-serif;
     text-align: center;
 }
-
 .movie-details h3{
     font-size: 1.2rem;
     font-weight: 500;
     color: #bdf4ff;
     font-family: 'Montserrat Alternates', sans-serif;
 }
-
 .universal-paragraph{
     margin-top: 30px;
     font-size: 0.9rem;
@@ -60,12 +53,10 @@ body{
 .card-body{
     color: #bdf4ff;
 }
-
 .card-title a{
     text-decoration: none;
     color: #bdf4ff;
 }
-
 .card-title a:hover{
     color: red;
     cursor: pointer;
@@ -82,7 +73,6 @@ body{
     flex-grow: 1;
     flex-basis: 0;
 }
-
 .my-form-item>label{
     font-size: 1.2rem;
     margin-bottom: .25rem;
@@ -109,7 +99,6 @@ body{
 .my-form-item select option{
     background-color: black;
 }
-
 .my-form-item input:focus, .my-form-item textarea:focus, .my-form-item select:focus{
     border-color: 1px solid #9999ff;
 }
@@ -120,7 +109,89 @@ body{
     align-items: flex-start;
     justify-content: flex-start;
 }
-
 .my-btn-row>*{
     margin-left: 1rem;
 }
+
+/* Movie cover */
+.movie-cover{
+    width: 80%;
+    height: 600px;
+}
+
+/* Movie details */
+.show-details{
+    color: #bdf4ff;
+}
+.movie-cover{
+    width: 70%;
+    height: auto;
+    margin-top: 30px;
+    border: 6px solid #e2e2ea;
+    border-radius: 8px;
+}
+.movie-poster{
+    width: 100%;
+    height: 500px;
+    margin-top: 30px;
+    border: 6px solid #e2e2ea;
+    border-radius: 8px;
+}
+.movie-container{
+    position: relative;
+}
+.movie-container:hover .movie-poster{
+    opacity: 0.6;
+}
+.movie-container:hover .movie-overlay{
+    opacity: 1;
+}
+.movie-overlay{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    opacity: 0;
+    transition: opacity 0.3s ease-in-out;
+}
+.rating-star{
+    color: #0cd11d;
+    font-size: 1.4rem;
+    text-align: center;
+}
+.movie-rating{
+    color: #bdf4ff;
+    font-size: 1.2rem;
+    font-weight: 700;
+    padding: 8px 16px;
+    border-radius: 4px;
+    margin-bottom: 8px;
+}
+.movie-details-btn{
+    background-color: #0cd11d ;
+    color: #e5edef;
+    font-size: 1.2rem;
+    padding: 8px 16px;
+    border-radius: 4px;
+    text-decoration: none;
+    transition: all 0.3s ease;
+}
+.movie-details-btn:hover{
+    cursor: pointer;
+    opacity: 1;
+}
+.movie-overlay a{
+    text-decoration: none;
+}
+.movie-overlay a:hover{
+    text-decoration: none;
+    color: #e5edef;
+}
+/*Responsive*/
+@media screen and (max-width: 768px){
+    .movie-cover{
+        width: 100%;
+        height: auto;
+    }
+}   
