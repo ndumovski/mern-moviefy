@@ -5,17 +5,12 @@ const path = require('path');
 
 const directorsRouter = require('./routes/directors');
 const moviesRouter = require('./routes/movies');
+const homeRouter = require('./routes/home');
 
 const app = express();
 const port = process.env.PORT || 5000;
 
-
-// Serve static files from the React app
-//change the url to the frontend build folder
-
 app.use(express.static(path.join(__dirname, 'public')));
-
-
 
 //Connecting to MongoDB
 mongoose.connect('mongodb://127.0.0.1:27017/moviefy').then(() => {
@@ -29,6 +24,7 @@ app.use(express.json());
 
 app.use('/directors', directorsRouter);
 app.use('/movies', moviesRouter);
+app.use('/', homeRouter);
 
 
 app.listen(port, () => {
