@@ -1,4 +1,4 @@
-//This code adds a new director to the database, and also creates a duplicate record in the database, I need to fix this
+//POST new director to the database - http://localhost:5000/directors/add
 import React from "react";
 import { useNavigate } from "react-router-dom";
 import axios from "axios";

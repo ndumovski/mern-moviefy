@@ -1,3 +1,4 @@
+//Routes for directors using RESTful API
 const express = require('express');
 const router = express.Router();
 const directorController = require('../controllers/directorController');

@@ -1,3 +1,4 @@
+//PUT (edit) a director - http://localhost:5000/directors/:slug/edit
 import React, { useEffect, useState } from "react";
 import { useNavigate, useParams } from "react-router-dom";
 import axios from "axios";

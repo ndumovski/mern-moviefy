@@ -1,4 +1,4 @@
-//This code adds a new director to the database and edits a existing director, and also creates a duplicate record in the database, I need to fix this
+//This component is used to add a new director or update an existing director
 import React, { useState, useEffect } from "react";
 
 const DirectorForm = ({ director, onSubmit, onCancel }) => {

@@ -24,12 +24,6 @@ body{
     font-family: 'Montserrat Alternates', sans-serif;
     text-align: center;
 }
-.movie-details h3{
-    font-size: 1.2rem;
-    font-weight: 500;
-    color: #bdf4ff;
-    font-family: 'Montserrat Alternates', sans-serif;
-}
 .universal-paragraph{
     margin-top: 30px;
     font-size: 0.9rem;
@@ -38,6 +32,20 @@ body{
     font-family: 'Montserrat Alternates', sans-serif;
     text-align: center;
 }
+.text-moviefy{
+    color: #bdf4ff;
+}
+
+/* Director */
+.card{
+    background: linear-gradient(to right, #5e2a3a, #1313b4, #040c39);
+}
+.card-title a:hover{
+    color: red;
+    cursor: pointer;
+} 
+
+/* Forms styles */
 .form-header-color{
     margin-top: 25px;
     font-size: 0.6rem;
@@ -46,26 +54,6 @@ body{
     font-family: 'Montserrat Alternates', sans-serif;
 }
 
-/* Director */
-.card{
-    background: linear-gradient(to right, #5e2a3a, #1313b4, #040c39);
-}
-.card-body{
-    color: #bdf4ff;
-}
-.card-title a{
-    text-decoration: none;
-    color: #bdf4ff;
-}
-.card-title a:hover{
-    color: red;
-    cursor: pointer;
-} 
-.card-text{
-    color: #bdf4ff;
-}
-
-/* Forms styles */
 .my-form-item{
     display: flex;
     flex-direction: column;
@@ -120,22 +108,15 @@ body{
 }
 
 /* Movie details */
-.show-details{
-    color: #bdf4ff;
-}
 .movie-cover{
     width: 70%;
     height: auto;
     margin-top: 30px;
-    border: 6px solid #e2e2ea;
-    border-radius: 8px;
 }
 .movie-poster{
     width: 100%;
     height: 500px;
     margin-top: 30px;
-    border: 6px solid #e2e2ea;
-    border-radius: 8px;
 }
 .movie-container{
     position: relative;
@@ -155,39 +136,14 @@ body{
     opacity: 0;
     transition: opacity 0.3s ease-in-out;
 }
-.rating-star{
-    color: #0cd11d;
-    font-size: 1.4rem;
-    text-align: center;
-}
 .movie-rating{
-    color: #bdf4ff;
     font-size: 1.2rem;
     font-weight: 700;
     padding: 8px 16px;
     border-radius: 4px;
     margin-bottom: 8px;
 }
-.movie-details-btn{
-    background-color: #0cd11d ;
-    color: #e5edef;
-    font-size: 1.2rem;
-    padding: 8px 16px;
-    border-radius: 4px;
-    text-decoration: none;
-    transition: all 0.3s ease;
-}
-.movie-details-btn:hover{
-    cursor: pointer;
-    opacity: 1;
-}
-.movie-overlay a{
-    text-decoration: none;
-}
-.movie-overlay a:hover{
-    text-decoration: none;
-    color: #e5edef;
-}
+
 /*Responsive*/
 @media screen and (max-width: 768px){
     .movie-cover{

@@ -1,5 +1,5 @@
+//This controller is responsible for handling CRUD operations for the director model
 const Director = require('../models/director');
-
 
 //Read all directors
 exports.getDirectors = async (req, res) => {

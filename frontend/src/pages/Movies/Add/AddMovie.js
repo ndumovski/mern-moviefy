@@ -1,3 +1,4 @@
+//POST a movie - localhost:5000/movies/add
 import React from "react";
 import { useNavigate } from "react-router-dom";
 import axios from "axios";

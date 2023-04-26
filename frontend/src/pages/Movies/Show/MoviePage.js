@@ -1,3 +1,4 @@
+//GET a single movie - localhost:5000/movies/:slug
 import React, { useState, useEffect } from "react";
 import { useNavigate, useParams } from "react-router-dom";
 import axios from "axios";
@@ -49,19 +50,19 @@ const MoviePage = () => {
                     <div className="container">
                         <div className="row">
                             <div className="col-md-6">
-                                <img className="movie-cover movie-cover-show fixed-look" src={imageUrl} alt={movie.title} />
+                                <img className="movie-cover border border-5 rounded" src={imageUrl} alt={movie.title} />
                             </div>
                             <div className="col-md-6">
                                 <h1 className="universal-heading text-start">{movie.title}</h1>
                                     <button className="btn btn-info m-2" onClick={handleUpdate}>Edit</button>
                                     <button className="btn btn-danger m-2" onClick={handleDelete}>Delete</button>
-                                    <hr className="show-details" />
+                                    <hr className="text-moviefy" />
                                     <div className="col-md-12 movie-details">
-                                        <p className="show-details">Released in {releasedYear} by {movie.director.name} </p>
-                                        <p className="show-details">{movie.description}</p>
+                                        <p className="text-moviefy">Released in {releasedYear} by {movie.director.name} </p>
+                                        <p className="text-moviefy">{movie.description}</p>
                                     </div>
                                     <div className="col-md-12 movie-details">
-                                        <p className="show-details">Rating by IMDb is {movie.rating} </p>
+                                        <p className="text-moviefy">Rating by IMDb is {movie.rating} </p>
                                     </div>
                             </div>
                         </div>

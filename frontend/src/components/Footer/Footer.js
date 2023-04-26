@@ -66,7 +66,7 @@ function Footer() {
             </div>
 
             <div className="footer-copyright text-center py-3 footer-color">
-                &copy; 2023 Moviefy | All rights reserved. 
+                &copy; <span id="currentYear"></span> Moviefy | All rights reserved. 
             </div>
         </footer>
     );

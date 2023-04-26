@@ -1,12 +1,10 @@
+//Routes for movies using RESTful API
 const express = require('express');
 const router = express.Router();
 const movieController = require('../controllers/movieController');
 
 //GET all movies
 router.get('/', movieController.getMovies);
-
-//POST a new movie
-// router.post('/add', movieController.createMovie);
 
 //POST a new movie and upload a photo
 router.post('/add', movieController.uploadPhoto, movieController.createMovie);

@@ -1,3 +1,4 @@
+//GET all directors - localhost:5000/directors
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 import { Link } from 'react-router-dom';
@@ -25,9 +26,9 @@ function Directors(){
                     <div className="card mt-4">
                         <div className="card-body">
                             <h5 className="card-title">
-                            <Link to={`/directors/${director.slug}`}>{director.name}</Link>  
+                            <Link className="text-decoration-none text-moviefy" to={`/directors/${director.slug}`}>{director.name}</Link>  
                             </h5>
-                            <p className="card-text">Oscars: {director.oscars}</p>
+                            <p className="card-text text-moviefy">Oscars: {director.oscars}</p>
                         </div>
                     </div>
                 </div>

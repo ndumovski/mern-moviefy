@@ -12,7 +12,6 @@ import AddMovie from './pages/Movies/Add/AddMovie';
 import MoviePage from './pages/Movies/Show/MoviePage';
 import EditMovie from './pages/Movies/Edit/EditMovie';
 
-
 function App() {
   return (
     <Router>
@@ -36,5 +35,4 @@ function App() {
     </Router>
   );
 }
-
 export default App;

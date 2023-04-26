@@ -1,4 +1,4 @@
-//This code is for the movie form, same like the director form
+//This component is used to add a new movie or update an existing movie
 import React, { useState, useEffect } from "react";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";

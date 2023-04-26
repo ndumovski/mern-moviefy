@@ -1,3 +1,4 @@
+//This controller is responsible for handling CRUD operations for the movie model
 const Movie = require('../models/movie');
 const multer = require('multer');
 const path = require('path');
