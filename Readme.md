@@ -1,5 +1,6 @@
 [![Logo](/img/uklo-logo.png)](https://uklo.edu.mk/)[![Logo](/img/fict-logo.png)](https://fikt.uklo.edu.mk/) 
-# **Факултет за Информатички и Комуникациски Технологии**
+
+## **Факултет за Информатички и Комуникациски Технологии - ФИКТ**
 
 
 # Проектна задача по предметот Веб Програмирање
@@ -103,7 +104,6 @@
 ![GET Directors](/img/screenshots/directors.png)
 ![POST a Director](/img/screenshots/post-director.png)
 ![GET Movies](/img/screenshots/movies.png)
-![POST a Movie](/img/screenshots/post-movie.png)
 ![GET a Movie](/img/screenshots/show-movie.png)
 
 ## Како да го стартувате локално овој проект?
