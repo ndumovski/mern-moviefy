@@ -51,13 +51,15 @@ exports.getMovies = async (req, res) => {
 //Create a movie
 exports.createMovie =  async (req, res) => {
     const { title, description, releaseYear, rating, director } = req.body;
+
+    //String method to create a slug from the title - not RegExp / greshka
     const slug = title.toLowerCase().split(' ').join('-');
     const photo = req.file.filename;
     console.log(photo);
     const movie = new Movie({title, description, releaseYear, rating, director, slug, photo});
     try{
         const newMovie = await movie.save();
-        console.log(newMovie);
+        res.status(201).json(newMovie);
     } catch (err) {
         return res.status(400).json({ message: err.message });
     }
